@@ -7,10 +7,11 @@ Write the script with normal spellings (EEOC, ADA, AI, Kwall Barack Nadeau).
 This script:
   - says all-caps acronyms letter by letter with clean letter sounds
     (no "uh" before letters), except those in SAY_AS_WORD;
-  - says the firm name correctly;
+  - says the firm name and show name correctly;
+  - lowers the voice one half-step (same speed);
   - pauses 0.35 s between sentences and 0.7 s between paragraphs.
 """
-import argparse, re, sys
+import argparse, os, re, subprocess, sys, tempfile
 import numpy as np
 import soundfile as sf
 from kokoro_onnx import Kokoro
@@ -19,6 +20,8 @@ MODEL = "/home/claude/tts/kokoro-v1.0.onnx"
 VOICES = "/home/claude/tts/voices-v1.0.bin"
 VOICE = "af_heart"
 LANG = "en-us"
+# Lower the voice one half-step without changing speed (1.0 = no change).
+PITCH = 0.9439
 
 LETTERS = {
     "A": "ˈeɪ", "B": "bˈiː", "C": "sˈiː", "D": "dˈiː", "E": "ˈiː", "F": "ˈɛf",
@@ -33,6 +36,7 @@ SAY_AS_WORD = {"ERISA", "OSHA", "COBRA", "CHOICE", "HIPAA", "WARN", "USERRA", "C
 # Exact pronunciations (phonemes) for names the voice gets wrong.
 NAME_PHONEMES = {
     "Kwall Barack Nadeau": "kwˈɔːl bˈɛɹək neɪdˈuː",
+    "Employee Rights Weekly": "ɛmplɔɪˈiː ɹˌaɪts wˈiːkli",
 }
 REPLACE = {
     "Title VII": "Title Seven",
@@ -87,6 +91,7 @@ def main():
     ap.add_argument("script")
     ap.add_argument("out")
     ap.add_argument("--speed", type=float, default=1.0)
+    ap.add_argument("--pitch", type=float, default=PITCH)
     ap.add_argument("--show-phonemes", action="store_true")
     a = ap.parse_args()
     k = Kokoro(MODEL, VOICES)
@@ -104,7 +109,16 @@ def main():
             chunks += [audio, np.zeros(int(sr * 0.35), dtype=audio.dtype)]
         chunks.append(np.zeros(int(sr * 0.35), dtype=np.float32))
         print(f"paragraph {i + 1}/{len(paras)} done", file=sys.stderr)
-    sf.write(a.out, np.concatenate(chunks), sr)
+    audio = np.concatenate(chunks)
+    if abs(a.pitch - 1.0) < 1e-6:
+        sf.write(a.out, audio, sr)
+        return
+    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
+        raw = tmp.name
+    sf.write(raw, audio, sr)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
+                    f"asetrate={sr}*{a.pitch},aresample={sr},atempo={1 / a.pitch}", a.out], check=True)
+    os.remove(raw)
 
 
 if __name__ == "__main__":
