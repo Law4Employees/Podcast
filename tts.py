@@ -37,6 +37,11 @@ SAY_AS_WORD = {"ERISA", "OSHA", "COBRA", "CHOICE", "HIPAA", "WARN", "USERRA", "C
 NAME_PHONEMES = {
     "Kwall Barack Nadeau": "kwˈɔːl bˈɛɹək neɪdˈuː",
     "Employee Rights Weekly": "ɛmplɔɪˈiː ɹˌaɪts wˈiːkli",
+    # Longer forms first so the plural is matched before the singular.
+    "comparators": "kəmpˈæɹəɾɚz",
+    "Comparators": "kəmpˈæɹəɾɚz",
+    "comparator": "kəmpˈæɹəɾɚ",
+    "Comparator": "kəmpˈæɹəɾɚ",
 }
 REPLACE = {
     "Title VII": "Title Seven",
@@ -60,20 +65,32 @@ def to_phonemes(k, sentence):
             continue
         if kind == "name":
             before = sentence[pos:start]
+            # A lone "a" right before the name would be read as the letter "ay"; say it as "uh".
+            article = re.search(r"\b[aA]\s*$", before)
+            if article:
+                before = before[:article.start()]
             if before.strip():
                 parts.append(k.tokenizer.phonemize(before, LANG))
+            if article:
+                parts.append("ɐ")
             parts.append(NAME_PHONEMES[val])
             pos = end
             continue
         m = val
         word, plural = m.group(1), m.group(2)
         before = sentence[pos:m.start()]
+        # A lone "a" right before the acronym would be read as the letter "ay"; say it as "uh".
+        article = re.search(r"\b[aA]\s*$", before)
+        if article:
+            before = before[:article.start()]
         if before.strip():
             ph = k.tokenizer.phonemize(before, LANG).rstrip()
             # "the" before a letter that starts with a vowel sound: say "thee", not "thuh".
             if word[0] in "AEFHILMNORSX" and ph.endswith("ðə"):
                 ph = ph[:-2] + "ðɪ"
             parts.append(ph)
+        if article:
+            parts.append("ɐ")
         # Say the letters together like a person would: light stress on each, main stress on the last.
         spoken = "".join(LETTERS[c].replace("ˈ", "ˌ") for c in word[:-1]) + LETTERS[word[-1]]
         if plural:
