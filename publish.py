@@ -125,12 +125,20 @@ def main():
     ap.add_argument("--title")
     ap.add_argument("--notes-html")
     ap.add_argument("--notes-text")
+    ap.add_argument("--file-name", help="MP3 file name to use instead of the date-based name")
+    ap.add_argument("--remove", help="file name of an episode to remove from the feed")
     ap.add_argument("--rebuild", action="store_true")
     a = ap.parse_args()
     eps = load()
+    if a.remove:
+        eps = [e for e in eps if e["file"] != a.remove]
+        old = os.path.join(EP_DIR, a.remove)
+        if os.path.exists(old):
+            os.remove(old)
+        save(eps)
     if a.mp3:
         os.makedirs(EP_DIR, exist_ok=True)
-        name = f"Employment-Law-Weekly-{a.date}.mp3"
+        name = a.file_name or f"Employee-Rights-Weekly-{a.date}.mp3"
         dest = os.path.join(EP_DIR, name)
         if os.path.abspath(a.mp3) != dest:
             shutil.copyfile(a.mp3, dest)

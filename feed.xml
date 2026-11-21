@@ -6,7 +6,7 @@
     <atom:link href="https://law4employees.github.io/Podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Employee Rights Weekly from Kwall Barack Nadeau (employeerights.com). Each Monday: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance. Created with AI. Not legal advice. Check every source before relying on it.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Nov 2026 11:54:45 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 12:09:08 -0500</lastBuildDate>
     <itunes:author>Kwall Barack Nadeau</itunes:author>
     <itunes:summary>Employee Rights Weekly from Kwall Barack Nadeau (employeerights.com). Each Monday: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance. Created with AI. Not legal advice. Check every source before relying on it.</itunes:summary>
     <itunes:image href="https://law4employees.github.io/Podcast/cover.jpg"/>
@@ -16,15 +16,15 @@
     <itunes:type>episodic</itunes:type>
     <itunes:block>Yes</itunes:block>
     <item>
-      <title>Welcome to Employment Law Weekly</title>
-      <description><![CDATA[<p>Welcome to Employment Law Weekly. Every Monday: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance, with links in the show notes.</p><p>Prepared with AI for private use. Not legal advice. Check every source before relying on it.</p>
+      <title>Welcome to KBN Florida Employee Rights Weekly</title>
+      <description><![CDATA[<p>Welcome to KBN Florida Employee Rights Weekly from Kwall Barack Nadeau. Every Monday: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance, with links to every source in the show notes. More at <a href="https://employeerights.com">employeerights.com</a>.</p><p>Created with AI. Not legal advice. Check every source before relying on it.</p>
 ]]></description>
-      <itunes:summary>Welcome to Employment Law Weekly. Every Monday: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance, with links in the show notes. Prepared with AI for private use. Not legal advice.
+      <itunes:summary>Welcome to KBN Florida Employee Rights Weekly from Kwall Barack Nadeau. Every Monday: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance, with links to every source in the show notes. More at employeerights.com. Created with AI. Not legal advice.
 </itunes:summary>
       <pubDate>Sat, 21 Nov 2026 05:00:00 -0500</pubDate>
-      <enclosure url="https://law4employees.github.io/Podcast/episodes/Employment-Law-Weekly-2026-11-21.mp3" length="303405" type="audio/mpeg"/>
-      <guid isPermaLink="false">Employment-Law-Weekly-2026-11-21.mp3</guid>
-      <itunes:duration>00:00:38</itunes:duration>
+      <enclosure url="https://law4employees.github.io/Podcast/episodes/KBN-Welcome.mp3" length="398829" type="audio/mpeg"/>
+      <guid isPermaLink="false">KBN-Welcome.mp3</guid>
+      <itunes:duration>00:00:50</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
