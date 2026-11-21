@@ -77,8 +77,8 @@ def build(eps):
     <lastBuildDate>{now}</lastBuildDate>
     <itunes:author>Kwall Barack Nadeau</itunes:author>
     <itunes:summary>{html.escape(SHOW_DESC)}</itunes:summary>
-    <itunes:image href="{BASE}cover.jpg"/>
-    <image><url>{BASE}cover.jpg</url><title>{SHOW_TITLE}</title><link>{BASE}</link></image>
+    <itunes:image href="{BASE}cover-kbn.jpg"/>
+    <image><url>{BASE}cover-kbn.jpg</url><title>{SHOW_TITLE}</title><link>{BASE}</link></image>
     <itunes:category text="Government"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -106,7 +106,7 @@ header{{display:flex;gap:1.25rem;align-items:center}} header img{{width:140px;he
 ul{{list-style:none;padding:0}} li{{border-top:1px solid #dde2ea;padding:1rem 0}} audio{{width:100%;margin:.5rem 0}}
 code{{background:#eef1f6;padding:.15rem .35rem;border-radius:4px;word-break:break-all}}
 </style></head><body>
-<header><img src="cover.jpg" alt=""><div><h1>{SHOW_TITLE}</h1>
+<header><img src="cover-kbn.jpg" alt=""><div><h1>{SHOW_TITLE}</h1>
 <p>{html.escape(SHOW_DESC)}</p></div></header>
 <p>Podcast feed: <code>{BASE}feed.xml</code></p>
 <ul>
