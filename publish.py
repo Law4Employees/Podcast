@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add an episode to the Employment Law Weekly feed and rebuild feed.xml and index.html.
+"""Add an episode to the KBN Florida Employee Rights Weekly feed and rebuild feed.xml and index.html.
 
 Usage:
   python3 publish.py --mp3 /path/to/episode.mp3 --date 2026-11-23 \
@@ -20,10 +20,10 @@ DATA = os.path.join(ROOT, "episodes.json")
 EP_DIR = os.path.join(ROOT, "episodes")
 MAX_EPISODES = 26
 
-SHOW_TITLE = "Employment Law Weekly"
-SHOW_DESC = ("A weekly briefing for employee-side lawyers on new Eleventh Circuit and Florida "
-             "appellate employment decisions, plus new EEOC, DOL and NLRB guidance. "
-             "Prepared with AI for private use. Not legal advice. Check every source before relying on it.")
+SHOW_TITLE = "KBN Florida Employee Rights Weekly"
+SHOW_DESC = ("Employee Rights Weekly from Kwall Barack Nadeau (employeerights.com). Each Monday: new Eleventh Circuit "
+             "and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance. "
+             "Created with AI. Not legal advice. Check every source before relying on it.")
 
 
 def duration_seconds(path):
@@ -75,7 +75,7 @@ def build(eps):
     <description>{html.escape(SHOW_DESC)}</description>
     <language>en-us</language>
     <lastBuildDate>{now}</lastBuildDate>
-    <itunes:author>Law4Employees</itunes:author>
+    <itunes:author>Kwall Barack Nadeau</itunes:author>
     <itunes:summary>{html.escape(SHOW_DESC)}</itunes:summary>
     <itunes:image href="{BASE}cover.jpg"/>
     <image><url>{BASE}cover.jpg</url><title>{SHOW_TITLE}</title><link>{BASE}</link></image>

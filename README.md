@@ -1,4 +1,4 @@
-# Employment Law Weekly
+# KBN Florida Employee Rights Weekly
 
 A private weekly podcast feed: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance.
 
