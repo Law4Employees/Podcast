@@ -14,7 +14,7 @@ from datetime import datetime
 from email.utils import format_datetime
 from zoneinfo import ZoneInfo
 
-BASE = "https://law4employees.github.io/podcast/"
+BASE = "https://law4employees.github.io/Podcast/"
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "episodes.json")
 EP_DIR = os.path.join(ROOT, "episodes")
