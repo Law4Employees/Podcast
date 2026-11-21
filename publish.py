@@ -96,7 +96,6 @@ def build(eps):
     page = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
 <title>{SHOW_TITLE}</title>
 <link rel="alternate" type="application/rss+xml" title="{SHOW_TITLE}" href="feed.xml">
 <style>
@@ -107,7 +106,11 @@ code{{background:#eef1f6;padding:.15rem .35rem;border-radius:4px;word-break:brea
 </style></head><body>
 <header><img src="cover-kbn.jpg" alt=""><div><h1>{SHOW_TITLE}</h1>
 <p>{html.escape(SHOW_DESC)}</p></div></header>
-<p>Podcast feed: <code>{BASE}feed.xml</code></p>
+<h2>Subscribe</h2>
+<p><strong>Apple Podcasts (iPhone or iPad):</strong> open Podcasts, tap <em>Library</em>, tap the <em>...</em> button, choose <em>Follow a Show by URL</em>, and paste the feed address below.</p>
+<p><strong>Other podcast apps (Overcast, Pocket Casts and others):</strong> use the app's <em>Add by URL</em> option with the same address.</p>
+<p>Feed address: <code>{BASE}feed.xml</code></p>
+<p>From <a href="https://employeerights.com">Kwall Barack Nadeau</a>. Created with AI. Not legal advice.</p>
 <ul>
 {rows}
 </ul>
