@@ -18,7 +18,7 @@ BASE = "https://law4employees.github.io/Podcast/"
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "episodes.json")
 EP_DIR = os.path.join(ROOT, "episodes")
-MAX_EPISODES = 26
+MAX_EPISODES = 156  # about six months of daily plus weekly episodes
 
 SHOW_TITLE = "KBN Florida Employee Rights Weekly"
 SHOW_DESC = ("Employee Rights Weekly from Kwall Barack Nadeau (employeerights.com). Each Monday: new Eleventh Circuit "
