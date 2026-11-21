@@ -30,12 +30,16 @@ LETTERS = {
 # All-caps words that are spoken as words, not spelled out.
 SAY_AS_WORD = {"ERISA", "OSHA", "COBRA", "CHOICE", "HIPAA", "WARN", "USERRA", "CARES", "PRO"}
 # Exact replacements made before anything else (real spelling -> spoken spelling).
+# Exact pronunciations (phonemes) for names the voice gets wrong.
+NAME_PHONEMES = {
+    "Kwall Barack Nadeau": "kwˈɔːl bˈɛɹək neɪdˈuː",
+}
 REPLACE = {
-    "Kwall Barack Nadeau": "Quall Barrack Naydoe",
     "Title VII": "Title Seven",
     "AIR21": "Air twenty-one",
 }
 ACRONYM = re.compile(r"\b([A-Z]{2,6})(s?)\b")
+NAMES = re.compile("|".join(re.escape(n) for n in NAME_PHONEMES))
 
 
 def to_phonemes(k, sentence):
@@ -43,11 +47,22 @@ def to_phonemes(k, sentence):
         sentence = sentence.replace(a, b)
     # Undo hyphen or period spellings like E-E-O-C or E.E.O.C.
     sentence = re.sub(r"\b(?:[A-Z][-.]){1,5}[A-Z]\b\.?", lambda m: re.sub(r"[-.]", "", m.group(0)), sentence)
+    tokens = sorted([(m.start(), m.end(), "name", m.group(0)) for m in NAMES.finditer(sentence)] +
+                    [(m.start(), m.end(), "acr", m) for m in ACRONYM.finditer(sentence) if m.group(1) not in SAY_AS_WORD],
+                    key=lambda t: t[0])
     parts, pos = [], 0
-    for m in ACRONYM.finditer(sentence):
-        word, plural = m.group(1), m.group(2)
-        if word in SAY_AS_WORD:
+    for start, end, kind, val in tokens:
+        if start < pos:
             continue
+        if kind == "name":
+            before = sentence[pos:start]
+            if before.strip():
+                parts.append(k.tokenizer.phonemize(before, LANG))
+            parts.append(NAME_PHONEMES[val])
+            pos = end
+            continue
+        m = val
+        word, plural = m.group(1), m.group(2)
         before = sentence[pos:m.start()]
         if before.strip():
             ph = k.tokenizer.phonemize(before, LANG).rstrip()
@@ -55,7 +70,8 @@ def to_phonemes(k, sentence):
             if word[0] in "AEFHILMNORSX" and ph.endswith("ðə"):
                 ph = ph[:-2] + "ðɪ"
             parts.append(ph)
-        spoken = " ".join(LETTERS[c] for c in word)
+        # Say the letters together like a person would: light stress on each, main stress on the last.
+        spoken = "".join(LETTERS[c].replace("ˈ", "ˌ") for c in word[:-1]) + LETTERS[word[-1]]
         if plural:
             spoken += "z"
         parts.append(spoken)
