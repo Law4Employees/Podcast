@@ -42,6 +42,13 @@ NAME_PHONEMES = {
     "Comparators": "kəmpˈæɹəɾɚz",
     "comparator": "kəmpˈæɹəɾɚ",
     "Comparator": "kəmpˈæɹəɾɚ",
+    # "KOH-vid", not "KAH-vid". Listing COVID here also keeps it from being spelled out as letters.
+    "COVID-19": "kˈoʊvɪd nˈaɪntiːn",
+    "Covid-19": "kˈoʊvɪd nˈaɪntiːn",
+    "covid-19": "kˈoʊvɪd nˈaɪntiːn",
+    "COVID": "kˈoʊvɪd",
+    "Covid": "kˈoʊvɪd",
+    "covid": "kˈoʊvɪd",
 }
 REPLACE = {
     "Title VII": "Title Seven",
