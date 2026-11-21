@@ -82,7 +82,6 @@ def build(eps):
     <itunes:category text="Government"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <itunes:block>Yes</itunes:block>
 {chr(10).join(items)}
   </channel>
 </rss>
