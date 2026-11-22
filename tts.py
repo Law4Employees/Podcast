@@ -9,9 +9,11 @@ This script:
     (no "uh" before letters), except those in SAY_AS_WORD;
   - says the firm name and show name correctly;
   - lowers the voice one half-step (same speed);
-  - pauses 0.35 s between sentences and 0.7 s between paragraphs.
+  - pauses 0.35 s between sentences and 0.7 s between paragraphs;
+  - treats a paragraph that is only "[Chapter: Title]" as a chapter marker (not spoken)
+    and writes the chapter start times to episode.chapters.json for publish.py --chapters.
 """
-import argparse, os, re, subprocess, sys, tempfile
+import argparse, json, os, re, subprocess, sys, tempfile
 import numpy as np
 import soundfile as sf
 from kokoro_onnx import Kokoro
@@ -160,6 +162,9 @@ def to_phonemes(k, sentence):
     return " ".join(p.strip() for p in parts if p.strip())
 
 
+CHAPTER = re.compile(r"^\[Chapter:\s*(.+?)\s*\]$", re.IGNORECASE)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("script")
@@ -167,12 +172,24 @@ def main():
     ap.add_argument("--speed", type=float, default=1.0)
     ap.add_argument("--pitch", type=float, default=PITCH)
     ap.add_argument("--show-phonemes", action="store_true")
+    ap.add_argument("--chapters", help="where to write chapter start times as JSON "
+                    "(default: the output path with .chapters.json; written only if the script has chapter lines)")
     a = ap.parse_args()
     k = Kokoro(MODEL, VOICES)
     text = open(a.script).read()
     paras = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
-    sr, chunks = 24000, []
+    sr, chunks, chapters = 24000, [], []
     for i, p in enumerate(paras):
+        # A paragraph that is only "[Chapter: Title]" is not spoken; it starts a chapter at this point.
+        # The pitch change keeps the length the same, so these times hold for the final audio.
+        mark = CHAPTER.match(p)
+        if mark:
+            start = sum(len(c) for c in chunks) / sr
+            if chapters and abs(chapters[-1]["start"] - start) < 0.01:
+                chapters.pop()
+            chapters.append({"title": mark.group(1), "start": round(start, 3)})
+            print(f"paragraph {i + 1}/{len(paras)} done (chapter: {mark.group(1)})", file=sys.stderr)
+            continue
         for s in re.split(r"(?<=[.!?])\s+", p):
             if not s.strip():
                 continue
@@ -184,6 +201,13 @@ def main():
         chunks.append(np.zeros(int(sr * 0.35), dtype=np.float32))
         print(f"paragraph {i + 1}/{len(paras)} done", file=sys.stderr)
     audio = np.concatenate(chunks)
+    if chapters:
+        if chapters[0]["start"] > 0:
+            chapters.insert(0, {"title": "Introduction", "start": 0.0})
+        path = a.chapters or os.path.splitext(a.out)[0] + ".chapters.json"
+        with open(path, "w") as f:
+            json.dump(chapters, f, indent=2)
+        print(f"{len(chapters)} chapters written to {path}", file=sys.stderr)
     if abs(a.pitch - 1.0) < 1e-6:
         sf.write(a.out, audio, sr)
         return

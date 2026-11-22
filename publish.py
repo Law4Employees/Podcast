@@ -4,7 +4,7 @@
 Usage:
   python3 publish.py --mp3 /path/to/episode.mp3 --date 2026-11-23 \
       --title "Employment Law Weekly, November 16 through November 22, 2026" \
-      --notes-html notes.html --notes-text notes.txt
+      --notes-html notes.html --notes-text notes.txt [--chapters episode.chapters.json]
 
 Run with no arguments (or --rebuild) to regenerate feed.xml and index.html only.
 Keeps the newest MAX_EPISODES episodes and deletes older MP3 files.
@@ -30,6 +30,50 @@ def duration_seconds(path):
     out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                           "-of", "default=nw=1:nk=1", path], capture_output=True, text=True, check=True)
     return int(round(float(out.stdout.strip())))
+
+
+def embed_chapters(mp3, chapters_path):
+    """Write ID3 chapter frames (CHAP and CTOC, which Apple Podcasts reads) into mp3 in place.
+    Returns the number of chapters, or 0 if anything goes wrong (the MP3 is then left unchanged)."""
+    tmp_meta, tmp_mp3 = mp3 + ".ffmeta", mp3 + ".chap.mp3"
+    try:
+        with open(chapters_path) as f:
+            chapters = [c for c in json.load(f) if str(c.get("title", "")).strip()]
+        if not chapters:
+            return 0
+        end_ms = int(round(float(subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=nw=1:nk=1", mp3],
+            capture_output=True, text=True, check=True).stdout.strip()) * 1000))
+        starts = [max(0, int(round(float(c["start"]) * 1000))) for c in chapters]
+        if starts != sorted(starts) or starts[-1] >= end_ms:
+            raise ValueError("chapter times are out of order or past the end of the audio")
+
+        def esc(s):
+            return "".join("\\" + ch if ch in "=;#\\\n" else ch for ch in s)
+
+        lines = [";FFMETADATA1"]
+        for i, c in enumerate(chapters):
+            end = starts[i + 1] if i + 1 < len(chapters) else end_ms
+            lines += ["[CHAPTER]", "TIMEBASE=1/1000", f"START={starts[i]}", f"END={end}",
+                      "title=" + esc(str(c["title"]).strip())]
+        with open(tmp_meta, "w") as f:
+            f.write("\n".join(lines) + "\n")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", mp3, "-i", tmp_meta,
+                        "-map", "0:a", "-map_metadata", "1", "-map_chapters", "1", "-c", "copy",
+                        "-id3v2_version", "3", tmp_mp3], check=True)
+        found = json.loads(subprocess.run(["ffprobe", "-v", "error", "-show_chapters", "-of", "json", tmp_mp3],
+                                          capture_output=True, text=True, check=True).stdout).get("chapters", [])
+        if len(found) != len(chapters):
+            raise ValueError(f"expected {len(chapters)} chapters, found {len(found)}")
+        os.replace(tmp_mp3, mp3)
+        return len(chapters)
+    except Exception as err:
+        print("WARNING: chapters not added, publishing without them:", err)
+        return 0
+    finally:
+        for p in (tmp_meta, tmp_mp3):
+            if os.path.exists(p):
+                os.remove(p)
 
 
 def hms(sec):
@@ -128,6 +172,7 @@ def main():
     ap.add_argument("--notes-html")
     ap.add_argument("--notes-text")
     ap.add_argument("--file-name", help="MP3 file name to use instead of the date-based name")
+    ap.add_argument("--chapters", help="chapter JSON written by tts.py; embeds chapter markers in the MP3")
     ap.add_argument("--remove", help="file name of an episode to remove from the feed")
     ap.add_argument("--rebuild", action="store_true")
     a = ap.parse_args()
@@ -144,6 +189,12 @@ def main():
         dest = os.path.join(EP_DIR, name)
         if os.path.abspath(a.mp3) != dest:
             shutil.copyfile(a.mp3, dest)
+        chapter_count = 0
+        if a.chapters:
+            if os.path.exists(a.chapters):
+                chapter_count = embed_chapters(dest, a.chapters)
+            else:
+                print("WARNING: chapters file not found, publishing without chapters:", a.chapters)
         with open(a.notes_html) as f:
             notes_html = f.read()
         with open(a.notes_text) as f:
@@ -162,6 +213,8 @@ def main():
     build(eps)
     print("feed.xml and index.html rebuilt with", len(eps), "episode(s)")
     if a.mp3:
+        if a.chapters:
+            print("Chapters embedded:", chapter_count)
         print("Episode URL:", BASE + "episodes/" + name)
 
 
