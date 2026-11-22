@@ -49,21 +49,71 @@ NAME_PHONEMES = {
     "COVID": "kˈoʊvɪd",
     "Covid": "kˈoʊvɪd",
     "covid": "kˈoʊvɪd",
+    # Firm names said alone (the full firm name above is matched first).
+    "Barack": "bˈɛɹək",
+    "Nadeau": "neɪdˈuː",
+    # Legal Latin.
+    "pro se": "pɹˌoʊ sˈeɪ",
+    "prima facie": "pɹˈaɪmə fˈeɪʃə",
+    "sua sponte": "sˌuːə spˈɑːnteɪ",
+    # Case names.
+    "Swierkiewicz": "swɪɹkˈɛvɪtʃ",
+    "Faragher": "fˈæɹəɡɚ",
+    "Muldrow": "mˈʌldɹoʊ",
+    "Gessner": "ɡˈɛsnɚ",
+    "Cucina": "kuːtʃˈiːnə",
+    "Napoletana": "nˌɑːpoʊlɛtˈɑːnə",
+    # Florida places.
+    "Kissimmee": "kɪsˈɪmi",
+    "Ocala": "oʊkˈælə",
+    "Brevard": "bɹəvˈɑːɹd",
+    # Acronyms that lawyers say as words.
+    "PIPs": "pˈɪps",
+    "PIP": "pˈɪp",
+    "SOX": "sˈɑːks",
+    "GINA": "dʒˈiːnə",
+    "FOIA": "fˈɔɪə",
 }
 REPLACE = {
     "Title VII": "Title Seven",
     "AIR21": "Air twenty-one",
+    " v. ": " versus ",
+    "Fla. Stat.": "Florida Statutes",
 }
 ACRONYM = re.compile(r"\b([A-Z]{2,6})(s?)\b")
-NAMES = re.compile("|".join(re.escape(n) for n in NAME_PHONEMES))
+# Whole words only; an optional possessive 's is said as "z".
+NAMES = re.compile(r"\b(" + "|".join(re.escape(n) for n in NAME_PHONEMES) + r")('s)?\b")
+ROMAN = {"I": 1, "V": 5, "X": 10}
+NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+                "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen",
+                "nineteen", "twenty"]
+# Roman numerals after these words are said as numbers: "Title IX" -> "Title nine", "Counts I and II" -> "Counts one and two".
+ROMAN_AFTER = re.compile(r"\b(Titles?|Counts?|Chapters?|Articles?|Parts?)((?:(?:\s*,)?\s+(?:and\s+|or\s+|through\s+)?[IVX]{1,5}\b)+)")
+
+
+def roman_to_words(numeral):
+    total = 0
+    for i, c in enumerate(numeral):
+        v = ROMAN[c]
+        total += -v if i + 1 < len(numeral) and ROMAN[numeral[i + 1]] > v else v
+    return NUMBER_WORDS[total] if 0 < total < len(NUMBER_WORDS) else numeral
+
+
+def speakable(sentence):
+    for a, b in REPLACE.items():
+        sentence = sentence.replace(a, b)
+    sentence = ROMAN_AFTER.sub(lambda m: m.group(1) + re.sub(r"\b[IVX]{1,5}\b", lambda r: roman_to_words(r.group(0)), m.group(2)), sentence)
+    # "Section 1981" is said "nineteen eighty-one", not "nineteen hundred eighty-one".
+    sentence = re.sub(r"§§?\s*", "Section ", sentence)
+    sentence = re.sub(r"\b(Sections?\s+)(1[0-9])([1-9][0-9])\b", r"\1\2 \3", sentence)
+    return sentence
 
 
 def to_phonemes(k, sentence):
-    for a, b in REPLACE.items():
-        sentence = sentence.replace(a, b)
+    sentence = speakable(sentence)
     # Undo hyphen or period spellings like E-E-O-C or E.E.O.C.
     sentence = re.sub(r"\b(?:[A-Z][-.]){1,5}[A-Z]\b\.?", lambda m: re.sub(r"[-.]", "", m.group(0)), sentence)
-    tokens = sorted([(m.start(), m.end(), "name", m.group(0)) for m in NAMES.finditer(sentence)] +
+    tokens = sorted([(m.start(), m.end(), "name", m) for m in NAMES.finditer(sentence)] +
                     [(m.start(), m.end(), "acr", m) for m in ACRONYM.finditer(sentence) if m.group(1) not in SAY_AS_WORD],
                     key=lambda t: t[0])
     parts, pos = [], 0
@@ -80,7 +130,7 @@ def to_phonemes(k, sentence):
                 parts.append(k.tokenizer.phonemize(before, LANG))
             if article:
                 parts.append("ɐ")
-            parts.append(NAME_PHONEMES[val])
+            parts.append(NAME_PHONEMES[val.group(1)] + ("z" if val.group(2) else ""))
             pos = end
             continue
         m = val
