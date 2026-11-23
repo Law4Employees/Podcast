@@ -44,6 +44,11 @@ NAME_PHONEMES = {
     "Comparators": "kəmpˈæɹəɾɚz",
     "comparator": "kəmpˈæɹəɾɚ",
     "Comparator": "kəmpˈæɹəɾɚ",
+    # "em-PLOY-er" with a clear "y" glide; the default blurs the "oy" into the "er".
+    "employers": "ɛmplˈɔɪjɚz",
+    "Employers": "ɛmplˈɔɪjɚz",
+    "employer": "ɛmplˈɔɪjɚ",
+    "Employer": "ɛmplˈɔɪjɚ",
     # "KOH-vid", not "KAH-vid". Listing COVID here also keeps it from being spelled out as letters.
     "COVID-19": "kˈoʊvɪd nˈaɪntiːn",
     "Covid-19": "kˈoʊvɪd nˈaɪntiːn",
@@ -128,11 +133,16 @@ def to_phonemes(k, sentence):
             article = re.search(r"\b[aA]\s*$", before)
             if article:
                 before = before[:article.start()]
+            spoken = NAME_PHONEMES[val.group(1)]
             if before.strip():
-                parts.append(k.tokenizer.phonemize(before, LANG))
+                ph = k.tokenizer.phonemize(before, LANG).rstrip()
+                # "the" before a vowel sound: say "thee", not "thuh" ("the employer").
+                if ph.endswith("ðə") and spoken.lstrip("ˈˌ")[:1] in "aeiouæɑɐɔəɛɜɪʊʌ":
+                    ph = ph[:-2] + "ðɪ"
+                parts.append(ph)
             if article:
                 parts.append("ɐ")
-            parts.append(NAME_PHONEMES[val.group(1)] + ("z" if val.group(2) else ""))
+            parts.append(spoken + ("z" if val.group(2) else ""))
             pos = end
             continue
         m = val
