@@ -6,7 +6,7 @@
     <atom:link href="https://law4employees.github.io/Podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Employee Rights Weekly from Kwall Barack Nadeau (employeerights.com). Each Monday: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance. Created with AI. Not legal advice. Check every source before relying on it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Nov 2026 06:34:57 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 06:53:42 -0500</lastBuildDate>
     <itunes:author>Kwall Barack Nadeau</itunes:author>
     <itunes:summary>Employee Rights Weekly from Kwall Barack Nadeau (employeerights.com). Each Monday: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance. Created with AI. Not legal advice. Check every source before relying on it.</itunes:summary>
     <itunes:image href="https://law4employees.github.io/Podcast/cover-kbn.jpg"/>
@@ -63,6 +63,95 @@ Coverage is limited to decisions Westlaw has published; short procedural orders 
       <enclosure url="https://law4employees.github.io/Podcast/episodes/mdfla-2026-11-23.mp3" length="2183579" type="audio/mpeg"/>
       <guid isPermaLink="false">mdfla-2026-11-23.mp3</guid>
       <itunes:duration>00:04:33</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Employee Rights Weekly: November 16 through November 22, 2026</title>
+      <description><![CDATA[<p>Coverage: November 16 through November 22, 2026<br>Episode length: 17 minutes 15 seconds</p>
+<h3>Eleventh Circuit</h3>
+<p><b>Jones v. Franklin (School Board of Gadsden County)</b><br>11th Cir., unpublished, Nov. 16, 2026<br>No. 26-11227 (appeal from N.D. Fla. No. 4:25-cv-00188)<br>Westlaw: 2026 WL 3519448<br>Affirmed Rule 12(b)(6) dismissal of a pro se applicant&#x27;s ADEA failure-to-hire and Title VII retaliation claims. A younger hire raised only on appeal was disregarded, with dictum that a younger hire alone would not suffice; retaliation failed for lack of any alleged decision maker knowledge, and a footnote treated a roughly two-year gap as too long.<br><i>Practice point:</i> Plead the decision maker&#x27;s identity and knowledge, and put replacement and comparator facts in the complaint. Expect the younger-hire dictum to be cited at the pleading stage.<br><a href="https://media.ca11.uscourts.gov/opinions/unpub/files/202611227.pdf">Opinion (court)</a> | <a href="https://1.next.westlaw.com/Document/I0f2f1780e20e11f1bc11bc7be372d1de/View/FullText.html">Westlaw (subscribers)</a></p>
+<p><b>Smith v. Emory Health, Inc.</b><br>11th Cir., unpublished, Nov. 12, 2026 (prior week, newly available on Westlaw)<br>No. 25-13093 (appeal from N.D. Ga. No. 1:23-cv-04314)<br>Westlaw: 2026 WL 3438516<br>Affirmed summary judgment on a physician&#x27;s ADA retaliation and retaliatory hostile work environment claims. A modestly lower evaluation and a PIP were not materially adverse, given testimony they did not affect pay or promotion; suspension and non-renewal failed on pretext where the employer had good reason to believe she worked outside facilities and lied about it.<br><i>Practice point:</i> Develop early evidence of what a PIP or review actually triggers inside the organization, and attack the investigation itself when the employer relies on its findings.<br><a href="https://www.leagle.com/decision/infco20261112037">Opinion (Leagle)</a> | <a href="https://1.next.westlaw.com/Document/I0cd40200df0411f1aa3ff5d74b1207a9/View/FullText.html">Westlaw (subscribers)</a></p>
+<p><b>Jackson v. Secretary of the Air Force</b><br>11th Cir., unpublished, Nov. 10, 2026 (prior week, newly available on Westlaw)<br>No. 25-10038 (appeal from N.D. Fla. No. 3:23-cv-03881)<br>Westlaw: 2026 WL 3408502<br>Affirmed summary judgment against a pro se federal employee on Title VII discrimination and retaliation claims, largely on abandonment, the 45-day EEO contact deadline, and reprisals that predated EEO contact. Restates the federal-sector &#x27;any part&#x27; standard and treats the convincing mosaic as the ordinary summary judgment inquiry, with McDonnell Douglas as an additional route.<br><i>Practice point:</i> Useful framework summary for federal-sector cases, but unpublished; check its significant-harm phrasing for retaliation before citing.<br><a href="https://www.leagle.com/decision/infco20261110084">Opinion (Leagle)</a> | <a href="https://1.next.westlaw.com/Document/Ifb2f0d70dd9011f1bb45860daf6bb5c4/View/FullText.html">Westlaw (subscribers)</a></p>
+<h3>Florida Appellate Courts</h3>
+<p><b>Lamb v. City of Tampa</b><br>Fla. 2d DCA, published, Nov. 13, 2026 (prior week, newly available on Westlaw)<br>No. 2D2025-0635 (review of PERC final order)<br>Westlaw: 2026 WL 3454429<br>Reversed PERC and directed it to order the City to promote a wartime-veteran officer. Section 295.09(1)(a) applies whenever a promotional exam is used; the eligibility list is the promotional register, and a discretionary final selection does not avoid the statute. Footnote 2 leaves open whether other criteria may shape eligibility or ranking; Judge Guard&#x27;s concurrence would apply the preference at every stage.<br><i>Practice point:</i> Ask every passed-over public-employee veteran whether an exam was used at any point. Press the every-stage argument and scrutinize when eligibility criteria were adopted.<br><a href="https://caselaw.findlaw.com/court/fl-district-court-of-appeal/574607.html">Opinion (FindLaw)</a> | <a href="https://1.next.westlaw.com/Document/Ia784d740df9811f1bc23de2e235f896d/View/FullText.html">Westlaw (subscribers)</a></p>
+<p><b>Karac v. Fidelity National Information Services, Inc.</b><br>Fla. 2d DCA, published, Nov. 13, 2026 (prior week, newly available on Westlaw)<br>No. 2D2025-1811 (review of FCHR final order)<br>Westlaw: 2026 WL 3453782<br>Affirmed FCHR&#x27;s dismissal of a pro se FCRA petition. No due process violation where the petitioner skipped the prehearing conference; remaining issues unreviewable on an incomplete record.<br><i>Practice point:</i> Procedural reminder for the administrative hearing route: attend the prehearing conference and secure a complete record on appeal.<br><a href="https://caselaw.findlaw.com/court/fl-district-court-of-appeal/573231.html">Opinion (FindLaw)</a> | <a href="https://1.next.westlaw.com/Document/I70857610df9211f18d6c830ce0a1a846/View/FullText.html">Westlaw (subscribers)</a></p>
+<p><i>No Florida Supreme Court or DCA employment written opinion confirmed for November 16 through 22. Several employment-adjacent DCA dispositions that week were bare per curiam rulings with no written opinion. No employment-related rule amendments.</i></p>
+<h3>EEOC</h3>
+<p><b>American Medical Response to pay $2.2 million (Title VII religion and ADA)</b><br>EEOC, Nov. 16, 2026<br>D. Colo. Civil Action No. 1:22-cv-02544<br>Nationwide consent decree over a no-beard respirator policy that kept EMTs and paramedics with religious grooming practices or pseudofolliculitis barbae off the job, where an alternative respirator was available. Requires accommodation positions using that respirator and a study on expanding it.<br><i>Practice point:</i> When an employer cites PPE or safety to refuse a grooming accommodation, ask what alternative equipment exists and whether it was considered.<br><a href="https://www.eeoc.gov/newsroom/american-medical-response-pay-22-million-nationwide-settlement-eeoc-religion-and">EEOC release</a></p>
+<p><b>All Inclusive Collection LLC to pay $45,000 (ADEA, Miami)</b><br>EEOC Miami District, Nov. 17, 2026<br>Conciliation (no lawsuit)<br>Miami employer&#x27;s online job ad sought applicants under 40. A deterred applicant recovered about a year&#x27;s pay, with policy changes, training and reporting of future postings.<br><i>Practice point:</i> Screen age cases for deterred applicants and age-coded postings.<br><a href="https://www.eeoc.gov/newsroom/all-inclusive-collection-llc-pay-45000-eeoc-age-discrimination-charge">EEOC release</a></p>
+<p><b>Prairie Green at Fay&#x27;s Point to pay $160,000 (PWFA)</b><br>EEOC, Nov. 17, 2026<br>N.D. Ill. No. 1:25-cv-11111 (EEOC v. Blue Island SLF, LLC)<br>CNA with a lifting restriction was pushed onto unpaid leave and fired despite available vacant jobs she could temporarily perform.<br><i>Practice point:</i> Clean example of temporary suspension of an essential function and forced-leave theories under the PWFA.<br><a href="https://www.eeoc.gov/newsroom/prairie-green-fays-point-pay-160000-pregnancy-discrimination">EEOC release</a></p>
+<p><b>Tripp Enterprises to pay over $250,600 (sexual harassment, retaliation)</b><br>EEOC, Nov. 19, 2026<br>Conciliation (no lawsuit)<br>Nevada manufacturer resolves harassment, retaliation and constructive discharge charges of four women.<br><a href="https://www.eeoc.gov/newsroom/nevada-manufacturer-pay-over-250600-resolve-eeoc-sexual-harassment-charges">EEOC release</a></p>
+<p><b>EEOC Fiscal Year 2026 Agency Financial Report</b><br>EEOC, Nov. 16, 2026<br>Reports $637.7 million recovered, mostly pre-litigation, and about 99,500 charges, up roughly 13 percent.<br><i>Practice point:</i> Factor rising charge volume into client expectations on investigation timing.<br><a href="https://www.eeoc.gov/newsroom/eeoc-releases-fiscal-year-2026-agency-financial-report">EEOC release</a></p>
+<p><i>No new EEOC guidance, technical assistance, rules or Commission votes this week.</i></p>
+<h3>Department of Labor</h3>
+<p><b>Final rule: employee or independent contractor status (FLSA, FMLA, MSPA)</b><br>DOL Wage and Hour Division, announced Nov. 19, 2026<br>RIN 1235-AA46; Docket WHD-2026-0001<br>Rescinds the 2024 six-factor test and returns to an economic reality test with two core factors, control and opportunity for profit or loss; skill, permanence and integration are less probative, and actual practice outweighs the contract. Says compliance, safety and quality-control requirements alone do not show employee status. Effective 60 days after Federal Register publication.<br><i>Practice point:</i> Expect defendants to lead with the two core factors and the safety and compliance carve-out. Build the record on actual control and on whether profit depends on business judgment rather than hours.<br><a href="https://www.dol.gov/newsroom/releases/whd/whd20261119">DOL release</a> | <a href="https://www.dol.gov/sites/dolgov/files/WHD/flsa/RIN_1235-AA46.pdf">Rule text</a> | <a href="https://www.dol.gov/agencies/whd/fact-sheets/13-flsa-employee-or-independent-contractor-2026">Fact Sheet 13</a></p>
+<p><b>Opinion Letter FMLA2026-3: off-hours work and travel count toward the 1,250 hours</b><br>DOL Wage and Hour Division, Nov. 17, 2026<br>FMLA2026-3<br>Required work outside scheduled hours, including at home, counts toward FMLA eligibility under the suffer-or-permit standard; travel between worksites likely counts. Without accurate records, the employer bears the burden to show the employee fell short, including for exempt employees.<br><i>Practice point:</i> Use against &#x27;not eligible&#x27; defenses for salaried employees whose employers track only scheduled hours.<br><a href="https://www.dol.gov/sites/dolgov/files/WHD/opinion-letters/FMLA/FMLA2026-3.pdf">Opinion letter</a></p>
+<p><b>Opinion Letter FLSA2026-14: seasonal amusement exemption and food concessionaires</b><br>DOL Wage and Hour Division, Nov. 17, 2026<br>FLSA2026-14<br>A concessionaire inside an amusement or recreational establishment is part of it, so seasonality under section 13(a)(3) is measured for host and concessionaire together. Ordinary restaurants generally are not amusement establishments.<br><i>Practice point:</i> Expect this in stadium, fair and seasonal-venue overtime cases; the restaurant point helps plaintiffs.<br><a href="https://www.dol.gov/sites/dolgov/files/WHD/opinion-letters/FLSA/FLSA2026-14.pdf">Opinion letter</a></p>
+<p><b>EBSA release on Bolton v. Inland Fresh Seafood Corp. of America (en banc 11th Cir.)</b><br>DOL EBSA, Nov. 16, 2026 (decision Oct. 13, 2026)<br>Release No. 26-1640-NAT; 11th Cir. No. 24-10084<br>Westlaw: 194 F.4th 108<br>DOL, which appeared as amicus, praised the unanimous en banc ruling that ERISA does not require exhaustion of plan remedies for statutory claims such as fiduciary breach; the court overruled Mason v. Continental Group. Exhaustion still applies to benefit claims.<br><i>Practice point:</i> Revisit statutory ERISA claims held for plan appeals and any pending motion relying on Mason.<br><a href="https://www.dol.gov/index.php/newsroom/releases/ebsa/ebsa20261116">DOL release</a> | <a href="https://1.next.westlaw.com/Document/Id29447d0c72011f18a37d1b819917386/View/FullText.html">Westlaw (subscribers)</a></p>
+<p><b>Proposed rule: PERM labor certification overhaul</b><br>DOL Employment and Training Administration, Nov. 16, 2026<br>Release No. 26-1607-NAT<br>Proposes longer and modernized recruitment and other changes to permanent labor certification; comments due in January. Little direct effect on employee-side litigation.<br><a href="https://www.dol.gov/index.php/newsroom/releases/eta/eta20261116">DOL release</a></p>
+<p><i>No new Field Assistance Bulletins or OSHA whistleblower guidance.</i></p>
+<h3>NLRB</h3>
+<p><b>Trader Joe&#x27;s East</b><br>NLRB, Nov. 19, 2026<br>375 NLRB No. 69; Case 13-CA-394913<br>Routine test-of-certification decision finding an unlawful refusal to bargain at a Chicago store. No doctrinal change.<br><a href="https://www.nlrb.gov/case/13-CA-394913">NLRB case page</a></p>
+<p><i>No new General Counsel memos or precedent-changing Board decisions.</i></p>
+<h3>Three things to watch or act on</h3><ol><li>Review open misclassification and FMLA coverage matters under the new independent contractor rule; target discovery at actual control and real profit-or-loss opportunity.</li><li>For salaried clients denied FMLA as ineligible, ask about off-hours and travel work and the employer&#x27;s time records; FMLA2026-3 shifts the burden when records are missing.</li><li>Screen public-sector intake for veterans passed over after a promotional exam; Lamb v. City of Tampa supports promotion as the remedy. Watch for employers rewriting rules around its footnote 2.</li></ol>
+<p>Court coverage cross-checked against Westlaw. Created with AI. Not legal advice. Check every source before relying on it.</p>
+]]></description>
+      <itunes:summary>Coverage: November 16 through November 22, 2026
+Episode length: 17 minutes 15 seconds
+
+ELEVENTH CIRCUIT
+Jones v. Franklin (School Board of Gadsden County)
+11th Cir., unpublished, Nov. 16, 2026
+No. 26-11227 (appeal from N.D. Fla. No. 4:25-cv-00188)
+Westlaw: 2026 WL 3519448
+Affirmed Rule 12(b)(6) dismissal of a pro se applicant&#x27;s ADEA failure-to-hire and Title VII retaliation claims. A younger hire raised only on appeal was disregarded, with dictum that a younger hire alone would not suffice; retaliation failed for lack of any alleged decision maker knowledge, and a footnote treated a roughly two-year gap as too long.
+Practice point: Plead the decision maker&#x27;s identity and knowledge, and put replacement and comparator facts in the complaint. Expect the younger-hire dictum to be cited at the pleading stage.
+Opinion (court):
+https://media.ca11.uscourts.gov/opinions/unpub/files/202611227.pdf
+Westlaw (subscribers):
+https://1.next.westlaw.com/Document/I0f2f1780e20e11f1bc11bc7be372d1de/View/FullText.html
+
+Smith v. Emory Health, Inc.
+11th Cir., unpublished, Nov. 12, 2026 (prior week, newly available on Westlaw)
+No. 25-13093 (appeal from N.D. Ga. No. 1:23-cv-04314)
+Westlaw: 2026 WL 3438516
+Affirmed summary judgment on a physician&#x27;s ADA retaliation and retaliatory hostile work environment claims. A modestly lower evaluation and a PIP were not materially adverse, given testimony they did not affect pay or promotion; suspension and non-renewal failed on pretext where the employer had good reason to believe she worked outside facilities and lied about it.
+Practice point: Develop early evidence of what a PIP or review actually triggers inside the organization, and attack the investigation itself when the employer relies on its findings.
+Opinion (Leagle):
+https://www.leagle.com/decision/infco20261112037
+Westlaw (subscribers):
+https://1.next.westlaw.com/Document/I0cd40200df0411f1aa3ff5d74b1207a9/View/FullText.html
+
+Jackson v. Secretary of the Air Force
+11th Cir., unpublished, Nov. 10, 2026 (prior week, newly available on Westlaw)
+No. 25-10038 (appeal from N.D. Fla. No. 3:23-cv-03881)
+Westlaw: 2026 WL 3408502
+Affirmed summary judgment against a pro se federal employee on Title VII discrimination and retaliation claims, largely on abandonment, the 45-day EEO contact deadline, and reprisals that predated EEO contact. Restates the federal-sector &#x27;any part&#x27; standard and treats the convincing mosaic as the ordinary summary judgment inquiry, with McDonnell Douglas as an additional route.
+Practice point: Useful framework summary for federal-sector cases, but unpublished; check its significant-harm phrasing for retaliation before citing.
+Opinion (Leagle):
+https://www.leagle.com/decision/infco20261110084
+Westlaw (subscribers):
+https://1.next.westlaw.com/Document/Ifb2f0d70dd9011f1bb45860daf6bb5c4/View/FullText.html
+
+FLORIDA APPELLATE COURTS
+Lamb v. City of Tampa
+Fla. 2d DCA, published, Nov. 13, 2026 (prior week, newly available on Westlaw)
+No. 2D2025-0635 (review of PERC final order)
+Westlaw: 2026 WL 3454429
+Reversed PERC and directed it to order the City to promote a wartime-veteran officer. Section 295.09(1)(a) applies whenever a promotional exam is used; the eligibility list is the promotional register, and a discretionary final selection does not avoid the statute. Footnote 2 leaves open whether other criteria may shape eligibility or ranking; Judge Guard&#x27;s concurrence would apply the preference at every stage.
+Practice point: Ask every passed-over public-employee veteran whether an exam was used at any point. Press the every-stage argument and scrutinize when eligibility criteria were adopted.
+Opinion (FindLaw):
+https://caselaw.findlaw.com/court/fl-district-court-of-appeal/574607.html
+Westlaw (subscribers):
+https://1.next.westlaw.com/Document/Ia784d740df9811f1bc23de2e235f896d/View/FullText.html
+
+Karac v. Fidelity National Information Services, Inc.
+Fl</itunes:summary>
+      <pubDate>Mon, 23 Nov 2026 05:00:00 -0500</pubDate>
+      <enclosure url="https://law4employees.github.io/Podcast/episodes/Employee-Rights-Weekly-2026-11-23.mp3" length="8277987" type="audio/mpeg"/>
+      <guid isPermaLink="false">Employee-Rights-Weekly-2026-11-23.mp3</guid>
+      <itunes:duration>00:17:15</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
