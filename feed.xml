@@ -6,7 +6,7 @@
     <atom:link href="https://law4employees.github.io/Podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Employee Rights Weekly from Kwall Barack Nadeau (employeerights.com). Each Monday: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance. Created with AI. Not legal advice. Check every source before relying on it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Nov 2026 06:53:42 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 02:02:34 -0500</lastBuildDate>
     <itunes:author>Kwall Barack Nadeau</itunes:author>
     <itunes:summary>Employee Rights Weekly from Kwall Barack Nadeau (employeerights.com). Each Monday: new Eleventh Circuit and Florida appellate employment decisions, plus new EEOC, DOL and NLRB guidance. Created with AI. Not legal advice. Check every source before relying on it.</itunes:summary>
     <itunes:image href="https://law4employees.github.io/Podcast/cover-kbn.jpg"/>
@@ -14,6 +14,42 @@
     <itunes:category text="Government"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Middle District Daily: November 25, 2026</title>
+      <description><![CDATA[<p>Middle District of Florida employment decisions newly available on Westlaw<br>Episode length: 2 minutes 51 seconds</p>
+<p><strong>Dowling v. Stantec, Inc.</strong><br>
+Case No. 8:26-cv-02284-MSS-LSG, Tampa Division, District Judge Mary S. Scriven, decided November 23, 2026<br>
+2026 WL 3590021<br>
+Breach of contract and Florida Private Whistleblower Act retaliation (pro se plaintiff). Result: motion to remand granted; case returned to the Sixth Judicial Circuit, Pasco County.</p>
+<p>The removing defendants did not show by clear and convincing evidence that no contract claim was possible against the Canadian parent, whose joinder defeated diversity. A 2017 offer letter that reached "affiliated" companies, plus a 2020 TN visa support letter stating a higher salary to be paid by Stantec in Canada, left room for a modified agreement that binds the parent, despite an unrebutted defense declaration. The court noted that Florida courts have not addressed whether immigration representations can modify an employment agreement. It did not reach the whistleblower "employer" question and left personal jurisdiction to the state court as overlapping with the contract merits.</p>
+<p>Deadline: None set. The case was remanded.</p>
+<p>Practice point: One possible claim against the nondiverse defendant is enough, so lead with the cleanest one and attach the offer letter, affiliate definitions and visa support filings. Expect the employer and personal jurisdiction defenses to return in state court. Research for this episode found no Middle District decision treating lack of personal jurisdiction as fraudulent joinder. Persuasive authority from outside the district declining to decide personal jurisdiction on remand, on a different rationale and not cited in this order: Magdalena v. Toyota Motor Corp., 2013 WL 12092086 (S.D. Fla.); Liljeberg v. Continental Tire the Americas, LLC, 2012 WL 602306 (M.D. Ala.).</p>
+<p><a href="https://1.next.westlaw.com/Document/I66cd4590e79811f1bb45860daf6bb5c4/View/FullText.html?transitionType=AICoCounselNext">Westlaw (subscribers)</a></p>
+<p>Coverage is limited to decisions Westlaw has published; short procedural orders may not appear. Created with AI. Not legal advice. Check every source before relying on it.</p>
+]]></description>
+      <itunes:summary>Middle District of Florida employment decisions newly available on Westlaw
+Episode length: 2 minutes 51 seconds
+
+Dowling v. Stantec, Inc.
+Case No. 8:26-cv-02284-MSS-LSG, Tampa Division, District Judge Mary S. Scriven, decided November 23, 2026
+2026 WL 3590021
+Breach of contract and Florida Private Whistleblower Act retaliation (pro se plaintiff). Result: motion to remand granted; case returned to the Sixth Judicial Circuit, Pasco County.
+
+The removing defendants did not show by clear and convincing evidence that no contract claim was possible against the Canadian parent, whose joinder defeated diversity. A 2017 offer letter that reached &quot;affiliated&quot; companies, plus a 2020 TN visa support letter stating a higher salary to be paid by Stantec in Canada, left room for a modified agreement that binds the parent, despite an unrebutted defense declaration. The court noted that Florida courts have not addressed whether immigration representations can modify an employment agreement. It did not reach the whistleblower &quot;employer&quot; question and left personal jurisdiction to the state court as overlapping with the contract merits.
+Deadline: None set. The case was remanded.
+Practice point: One possible claim against the nondiverse defendant is enough, so lead with the cleanest one and attach the offer letter, affiliate definitions and visa support filings. Expect the employer and personal jurisdiction defenses to return in state court. Research for this episode found no Middle District decision treating lack of personal jurisdiction as fraudulent joinder. Persuasive authority from outside the district declining to decide personal jurisdiction on remand, on a different rationale and not cited in this order: Magdalena v. Toyota Motor Corp., 2013 WL 12092086 (S.D. Fla.); Liljeberg v. Continental Tire the Americas, LLC, 2012 WL 602306 (M.D. Ala.).
+Westlaw (subscribers):
+https://1.next.westlaw.com/Document/I66cd4590e79811f1bb45860daf6bb5c4/View/FullText.html?transitionType=AICoCounselNext
+
+Coverage is limited to decisions Westlaw has published; short procedural orders may not appear. Created with AI. Not legal advice. Check every source before relying on it.
+</itunes:summary>
+      <pubDate>Wed, 25 Nov 2026 05:00:00 -0500</pubDate>
+      <enclosure url="https://law4employees.github.io/Podcast/episodes/mdfla-2026-11-25.mp3" length="1364919" type="audio/mpeg"/>
+      <guid isPermaLink="false">mdfla-2026-11-25.mp3</guid>
+      <itunes:duration>00:02:51</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Middle District Daily: November 23, 2026</title>
       <description><![CDATA[<p>Middle District of Florida employment decisions newly available on Westlaw<br>Episode length: 4 minutes 33 seconds</p>
